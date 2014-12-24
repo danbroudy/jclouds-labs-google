@@ -78,13 +78,8 @@ public class TargetHttpProxyApiLiveTest extends BaseGoogleComputeEngineApiLiveTe
 
    @Test(groups = "live", dependsOnMethods = "testGetTargetHttpProxy")
    public void testSetUrlMapTargetHttpProxy() {
-      UrlMapOptions map = new UrlMapOptions().name(TARGET_HTTP_PROXY_URL_MAP_NAME).description("simple url map")
-                                             .defaultService(getBackendServiceUrl(URL_MAP_DEFAULT_SERVICE_NAME));
-      assertOperationDoneSuccessfully(api.urlMaps()
-                                              .create(map));
-
       assertOperationDoneSuccessfully(api().setUrlMap(TARGET_HTTP_PROXY_NAME,
-                                                           getUrlMapUrl(TARGET_HTTP_PROXY_URL_MAP_NAME + "-2")));
+                                                      getUrlMapUrl(TARGET_HTTP_PROXY_URL_MAP_NAME + "-2")));
    }
 
    @Test(groups = "live", dependsOnMethods = "testSetUrlMapTargetHttpProxy")
@@ -97,7 +92,7 @@ public class TargetHttpProxyApiLiveTest extends BaseGoogleComputeEngineApiLiveTe
                                   getUrlMapUrl(TARGET_HTTP_PROXY_URL_MAP_NAME + "-2"));
    }
 
-   @Test(groups = "live", dependsOnMethods = "testListTargetHttpProxy")
+   @Test(groups = "live", dependsOnMethods = "testListTargetHttpProxy", alwaysRun = true)
    public void testDeleteTargetHttpProxy() {
       assertOperationDoneSuccessfully(api().delete(TARGET_HTTP_PROXY_NAME));
 
