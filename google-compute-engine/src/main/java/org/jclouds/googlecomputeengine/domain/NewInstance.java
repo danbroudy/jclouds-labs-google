@@ -102,4 +102,6 @@ public abstract class NewInstance {
 
    NewInstance() {
    }
+
+   //TODO (broudy) add builder class.
 }
