@@ -54,7 +54,7 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.ByteSource;
 import com.google.common.io.Files;
 
-@Test(groups = { "live", "blobstorelive" })
+@Test(groups = { "live", "blobstorelive" }, singleThreaded = true)
 public class GoogleCloudStorageBlobIntegrationLiveTest extends BaseBlobIntegrationTest {
 
    private long PART_SIZE = MultipartUpload.MIN_PART_SIZE;

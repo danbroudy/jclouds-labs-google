@@ -57,6 +57,15 @@ public class MultipartUploadSlicingAlgorithm {
    private volatile long chunkOffset;
    private volatile long copied;
 
+   public void clear(){
+      parts = 0;
+      chunkSize = 0;
+      remaining = 0;
+      part = 0;
+      chunkOffset = 0;
+      copied = 0;
+   }
+
    @VisibleForTesting
    protected long calculateChunkSize(long length) {
       long unitPartSize = defaultPartSize; // first try with default part size

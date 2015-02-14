@@ -69,6 +69,7 @@ public final class SequentialMultipartUploadStrategy extends MultipartUploadStra
          length = blob.getMetadata().getContentMetadata().getContentLength();
          payload.getContentMetadata().setContentLength(length);
       }
+      algorithm.clear();
       checkNotNull(length,
                "please invoke payload.getContentMetadata().setContentLength(length) prior to multipart upload");
       long chunkSize = algorithm.calculateChunkSize(length);
