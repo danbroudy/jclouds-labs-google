@@ -77,16 +77,6 @@ public class GoogleComputeEngineServiceLiveTest extends BaseComputeServiceLiveTe
    public void testCorrectAuthException() throws Exception {
    }
 
-   // reboot is not supported by GCE
-   @Test(enabled = true, dependsOnMethods = "testGet")
-   public void testReboot() throws Exception {
-   }
-
-   // suspend/Resume is not supported by GCE
-   @Test(enabled = true, dependsOnMethods = "testReboot")
-   public void testSuspendResume() throws Exception {
-   }
-
    @Test(enabled = true, dependsOnMethods = "testSuspendResume")
    public void testListNodesByIds() throws Exception {
       super.testGetNodesWithDetails();

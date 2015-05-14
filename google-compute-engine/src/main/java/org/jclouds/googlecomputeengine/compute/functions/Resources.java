@@ -68,4 +68,16 @@ public interface Resources {
    @POST
    @Path("/reset")
    Operation resetInstance(@EndpointParam URI selfLink);
+
+   /** Stops the instance by self-link and returns the operation in progres */
+   @Named("Instances:stop")
+   @POST
+   @Path("/stop")
+   Operation stopInstance(@EndpointParam URI selfLink);
+
+   /** Starts an instance that was stopped using the using the stopInstance method. */
+   @Named("Instances:start")
+   @POST
+   @Path("/start")
+   Operation startInstance(@EndpointParam URI selfLink);
 }
